@@ -20,7 +20,7 @@ export const init = () => {
   app.use(express.json());
   app.use(rTracer.expressMiddleware());
 
-  app.use('/', (req, res) => {
+  app.get('/', (req, res) => {
     const message = 'Service up and running!';
     logger().info(message);
     res.json(message);
